@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 """
-Duck typing - first element of a sequence
-Augument code with correct duck-typed annotations
+Documentation for module
 """
 from typing import Union, Any, Sequence
 
 
-def safe_first_element(lst: Sequence) -> Union[Any, None]:
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
     """
-    Duck-typed function
-    safe_first_element
+	lst : Sequence
     """
     if lst:
         return lst[0]
