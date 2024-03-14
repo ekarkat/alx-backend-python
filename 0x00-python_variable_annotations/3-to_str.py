@@ -1,8 +1,15 @@
-#!/usr/bin/python3
-""" Floor of a float"""
+#!/usr/bin/env python3
+"""
+Write a type-annotated function floor
+which takes a float n as argument
+and returns the floor of the float.
+
+"""
 
 
 def floor(n: float) -> str:
-    """ return the floor of a float """
-
+    """
+    n : float
+    return : str
+    """
     return str(n)
