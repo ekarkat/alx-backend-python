@@ -2,7 +2,7 @@
 """ Floor of a float"""
 
 
-def floor(n: float) -> str:
-    """ return a string representation of a float"""
-    n_str = str(n)
-    return n_str
+def floor(n: float) -> int:
+    """ return the floor of a float"""
+
+    return str(n)
