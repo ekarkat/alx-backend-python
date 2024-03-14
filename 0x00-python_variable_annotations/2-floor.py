@@ -7,7 +7,7 @@ and returns the floor of the float.
 """
 
 
-def to_str(n: float) -> int:
+def floor(n: float) -> int:
     """
     n : float
     return : int
