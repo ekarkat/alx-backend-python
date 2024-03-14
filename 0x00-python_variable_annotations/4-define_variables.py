@@ -9,5 +9,5 @@ school, a string with a value of “Holberton”
 
 a: int = 1
 pi: float = 3.14
-i_understand_annotations: bool = 1
-school: str = 'Holberton'
+i_understand_annotations: bool = True
+school: str = "Holberton"
