@@ -34,6 +34,7 @@ class TestAccessNestedMap(unittest.TestCase):
         with self.assertRaises(expected_output) as context:
             access_nested_map(nested_map, path)
 
+
 class TestGetJson(unittest.TestCase):
     """Test get json method"""
     @parameterized.expand(
@@ -44,9 +45,9 @@ class TestGetJson(unittest.TestCase):
     )
     def test_get_json(self, url, expected_output):
         """
-			Test that the mocked get method
-			was called exactly once (per input)
-		"""
+            Test that the mocked get method
+            was called exactly once (per input)
+        """
         mock = Mock()
         mock.json.return_value = expected_output
         with patch('requests.get', return_value=mock):

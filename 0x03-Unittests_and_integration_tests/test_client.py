@@ -32,3 +32,15 @@ class TestGithubOrgClient(unittest.TestCase):
         mock_fn.assert_called_once_with(
             "https://api.github.com/orgs/{}".format(org)
         )
+
+class TestGithubOrgClient(unittest.TestCase):
+    def test_public_repos_url(self):
+        """Mock the org method to return a known payload"""
+
+        known_payload = {"repos_url": "https://api.github.com/orgs/testorg/repos"}
+        with patch.object(GithubOrgClient, 'org', return_value=known_payload):
+            client = GithubOrgClient("testorg")
+
+            public_repos_url = client._public_repos_url
+
+            self.assertEqual(public_repos_url, "https://api.github.com/orgs/testorg/repos")
