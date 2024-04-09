@@ -33,8 +33,7 @@ class TestGithubOrgClient(unittest.TestCase):
             "https://api.github.com/orgs/{}".format(org)
         )
 
-class TestGithubOrgClient(unittest.TestCase):
-    def test_public_repos_url(self):
+    def test_public_repos_url(self) -> None:
         """Mock the org method to return a known payload"""
 
         known_payload = {"repos_url": "https://api.github.com/orgs/testorg/repos"}
