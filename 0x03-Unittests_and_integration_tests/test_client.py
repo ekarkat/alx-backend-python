@@ -33,13 +33,15 @@ class TestGithubOrgClient(unittest.TestCase):
             "https://api.github.com/orgs/{}".format(org)
         )
 
+    @parameterized.expand(
+        [
+            ('random_url', {'repos_url': 'http://www.google.com'})
+        ]
+    )
     def test_public_repos_url(self) -> None:
         """Mock the org method to return a known payload"""
 
-        known_payload = {"repos_url": "https://api.github.com/orgs/testorg/repos"}
-        with patch.object(GithubOrgClient, 'org', return_value=known_payload):
-            client = GithubOrgClient("testorg")
-
-            public_repos_url = client._public_repos_url
-
-            self.assertEqual(public_repos_url, "https://api.github.com/orgs/testorg/repos")
+        with patch('client.GithubOrgClient.org',
+                   PropertyMock(return_value=result)):
+            response = GithubOrgClient(name)._public_repos_url
+            self.assertEqual(response, result.get('repos_url'))
